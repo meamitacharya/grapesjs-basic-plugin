@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+    <link
+      href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/grapesjs"></script>
+    <!-- <script src="./src/custom-plugin.js"></script> -->
+    <!-- <script src="./src/navBar.js"></script> -->
+    <script src="./src/navBar-plugin.js"></script>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gjs" style="height: 0px; overflow: hidden"></div>
+
+    <script type="text/javascript">
+      window.editor = grapesjs.init({
+        canvas: {
+          styles: [
+            'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css',
+            'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+            'dist/style.css',
+          ],
+        },
+        height: '100%',
+        container: '#gjs',
+        showOffsets: true,
+        fromElement: true,
+        noticeOnUnload: false,
+        storageManager: false,
+        // storageManager: {
+        //   type: 'remote',
+        //   urlStore: 'http://localhost:5456/load',
+        //   urlLoad: 'http://localhost:5456/load',
+        // },
+        plugins: ['newNavBar'],
+        //  dynamicBlog', 'addNavBar', 'staticNavBar','newNavBar',
+        pluginsOpts: {
+          test: {
+            /* Test here your options  */
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
